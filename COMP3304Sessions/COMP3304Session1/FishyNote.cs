@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//jude commit comment
 
 namespace COMP3304Session1
 {
@@ -24,7 +23,6 @@ namespace COMP3304Session1
 
             _textBoxStorage = new TextBoxStorage();
             _collapsedBool = false;
-            //testLine25
             _textBoxStorage.LoadText(this.TextBox);
         }
 
