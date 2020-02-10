@@ -16,10 +16,16 @@ namespace COMP3304Session1
 
         bool _collapsedBool;
         ITextBoxStorage _textBoxStorage;
+        
+        int _ID;
+        RemoveNoteDelegate _removeThis;
 
-        public FishyNote()
+        public FishyNote(RemoveNoteDelegate pRemoveNote, int pID)
         {
             InitializeComponent();
+
+            _ID = pID;
+            _removeThis = pRemoveNote;
 
             _textBoxStorage = new TextBoxStorage();
             _collapsedBool = false;
@@ -38,7 +44,7 @@ namespace COMP3304Session1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            _removeThis(_ID);
         }
 
         private void CollapseButton_Click(object sender, EventArgs e)

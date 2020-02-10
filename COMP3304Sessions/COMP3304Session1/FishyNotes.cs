@@ -29,12 +29,19 @@ namespace COMP3304Session1
         //CREATE new FishyNote instance in FishyNoteList
         //SHOW last created FishyNoteList index
         private void AddNote_Click(object sender, EventArgs e)
-        {
-            _FishyNoteList.Add(new FishyNote());
+        {            
+            _FishyNoteList.Add(new FishyNote(RemoveNote, _FishyNoteList.Count));
 
             _FishyNoteList[_FishyNoteList.Count - 1].Show();
 
-            _FishyNoteDictionary.Add()
+            //_FishyNoteDictionary.Add()
+        }
+
+        private void RemoveNote(int id)
+        {
+            _FishyNoteList[id].Dispose();
+            //POSSIBLE MEMORY PROBLEM
+            //_FishyNoteList.RemoveAt(id);
         }
     }
 }
