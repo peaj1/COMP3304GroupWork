@@ -14,13 +14,15 @@ namespace COMP3304Session1
     {
         //CREATE List called FishyNoteList of Type FishyNote
         List<FishyNote> _FishyNoteList;
+        Dictionary<int, string> _FishyNoteDictionary;
 
         public FishyNotes()
         {
             InitializeComponent();
 
-            //INITIALISE FishyNoteList
+            //INITIALISE FishyNoteList & FishyNoteDictionary
             _FishyNoteList = new List<FishyNote>();
+            _FishyNoteDictionary = new Dictionary<int, string>();
         }
 
         //ON Click Event
@@ -31,6 +33,8 @@ namespace COMP3304Session1
             _FishyNoteList.Add(new FishyNote());
 
             _FishyNoteList[_FishyNoteList.Count - 1].Show();
+
+            _FishyNoteDictionary.Add()
         }
     }
 }
