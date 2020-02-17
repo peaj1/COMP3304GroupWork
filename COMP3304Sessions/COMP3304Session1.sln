@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMP3304Session1", "COMP3304Session1\COMP3304Session1.csproj", "{277B8A14-A031-4892-BB44-69D6209B7025}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542} = {BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imageProcessor", "imageProcessor\imageProcessor.csproj", "{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{277B8A14-A031-4892-BB44-69D6209B7025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{277B8A14-A031-4892-BB44-69D6209B7025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{277B8A14-A031-4892-BB44-69D6209B7025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA4F3AA-CA8D-4C38-8FA4-C5857CBB0542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
