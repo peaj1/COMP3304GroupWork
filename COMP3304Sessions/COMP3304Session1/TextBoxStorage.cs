@@ -1,34 +1,35 @@
-﻿using System;
-using System.Text;
-
-public class TextBoxStorage : ITextBoxStorage
+﻿namespace COMP3304Session1
 {
 
-    string _defaultText;
-    string _userText;
-
-    public TextBoxStorage()
-	{
-        _defaultText = "Enter your note here...";
-    }
-
-    void ITextBoxStorage.LoadText(System.Windows.Forms.TextBox pTextBox)
+    public class TextBoxStorage : ITextBoxStorage
     {
-        pTextBox.Text = _defaultText;
-        pTextBox.Select(0, 0);
-    }
 
-    void ITextBoxStorage.Click(System.Windows.Forms.TextBox pTextBox)
-    {
-        if (pTextBox.Text == _defaultText)
+        string _defaultText;
+        string _userText;
+
+        public TextBoxStorage()
         {
-            pTextBox.Text = "";
+            _defaultText = "Enter your note here...";
         }
 
-    }
+        void ITextBoxStorage.LoadText(System.Windows.Forms.TextBox pTextBox)
+        {
+            pTextBox.Text = _defaultText;
+            pTextBox.Select(0, 0);
+        }
 
-    void ITextBoxStorage.TextChanged(System.Windows.Forms.TextBox pTextBox)
-    {
-        _userText = pTextBox.Text;
+        void ITextBoxStorage.Click(System.Windows.Forms.TextBox pTextBox)
+        {
+            if (pTextBox.Text == _defaultText)
+            {
+                pTextBox.Text = "";
+            }
+
+        }
+
+        void ITextBoxStorage.TextChanged(System.Windows.Forms.TextBox pTextBox)
+        {
+            _userText = pTextBox.Text;
+        }
     }
 }

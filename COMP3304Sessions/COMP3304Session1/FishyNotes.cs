@@ -14,7 +14,9 @@ namespace COMP3304Session1
     {
         //CREATE List called FishyNoteList of Type FishyNote
         List<FishyNote> _FishyNoteList;
-        Dictionary<int, string> _FishyNoteDictionary;
+        Dictionary<int, ITextBoxStorage> _textBoxDictionary;
+       
+
 
         public FishyNotes()
         {
@@ -22,19 +24,21 @@ namespace COMP3304Session1
 
             //INITIALISE FishyNoteList & FishyNoteDictionary
             _FishyNoteList = new List<FishyNote>();
-            _FishyNoteDictionary = new Dictionary<int, string>();
+            _textBoxDictionary = new Dictionary<int, ITextBoxStorage>();
+        
         }
 
         //ON Click Event
         //CREATE new FishyNote instance in FishyNoteList
         //SHOW last created FishyNoteList index
         private void AddNote_Click(object sender, EventArgs e)
-        {            
-            _FishyNoteList.Add(new FishyNote(RemoveNote, _FishyNoteList.Count));
+        {
+            _textBoxDictionary.Add(_FishyNoteList.Count, new TextBoxStorage());
+
+            _FishyNoteList.Add(new FishyNote(RemoveNote, _FishyNoteList.Count, _textBoxDictionary[_FishyNoteList.Count]));
 
             _FishyNoteList[_FishyNoteList.Count - 1].Show();
 
-            //_FishyNoteDictionary.Add()
         }
 
         private void RemoveNote(int id)

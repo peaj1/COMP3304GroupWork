@@ -87,9 +87,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button CollapseButton;
+        public System.Windows.Forms.TextBox TextBox;
     }
 }

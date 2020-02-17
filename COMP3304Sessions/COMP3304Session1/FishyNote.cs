@@ -20,14 +20,14 @@ namespace COMP3304Session1
         int _ID;
         RemoveNoteDelegate _removeThis;
 
-        public FishyNote(RemoveNoteDelegate pRemoveNote, int pID)
+        public FishyNote(RemoveNoteDelegate pRemoveNote, int pID, ITextBoxStorage ptextStorage)
         {
             InitializeComponent();
 
             _ID = pID;
             _removeThis = pRemoveNote;
 
-            _textBoxStorage = new TextBoxStorage();
+            _textBoxStorage = ptextStorage;
             _collapsedBool = false;
             _textBoxStorage.LoadText(this.TextBox);
         }
