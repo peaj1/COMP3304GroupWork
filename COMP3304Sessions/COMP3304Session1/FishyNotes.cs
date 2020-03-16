@@ -13,9 +13,9 @@ namespace COMP3304Session1
     public partial class FishyNotes : Form
     {
         //CREATE List called FishyNoteList of Type FishyNote
-        List<FishyNote> _FishyNoteList;
-        Dictionary<int, ITextBoxStorage> _textBoxDictionary;
-       
+        
+        IController _controller;
+        ReturnVoidCommand _MoreFishInstance;
 
 
         public FishyNotes()
@@ -23,8 +23,9 @@ namespace COMP3304Session1
             InitializeComponent();
 
             //INITIALISE FishyNoteList & FishyNoteDictionary
-            _FishyNoteList = new List<FishyNote>();
-            _textBoxDictionary = new Dictionary<int, ITextBoxStorage>();
+            _controller = new Controller();
+
+            _MoreFishInstance = _controller.MoreFish;
         
         }
 
@@ -32,20 +33,11 @@ namespace COMP3304Session1
         //CREATE new FishyNote instance in FishyNoteList
         //SHOW last created FishyNoteList index
         private void AddNote_Click(object sender, EventArgs e)
-        {
-            _textBoxDictionary.Add(_FishyNoteList.Count, new TextBoxStorage());
-
-            _FishyNoteList.Add(new FishyNote(RemoveNote, _FishyNoteList.Count, _textBoxDictionary[_FishyNoteList.Count]));
-
-            _FishyNoteList[_FishyNoteList.Count - 1].Show();
+        { 
+            _MoreFishInstance();
 
         }
 
-        private void RemoveNote(int id)
-        {
-            _FishyNoteList[id].Dispose();
-            //POSSIBLE MEMORY PROBLEM
-            //_FishyNoteList.RemoveAt(id);
-        }
+       
     }
 }

@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="delegates.cs" />
     <Compile Include="FishyNote.cs">
       <SubType>Form</SubType>
@@ -65,7 +66,9 @@
     <Compile Include="FishyNotes.Designer.cs">
       <DependentUpon>FishyNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="IController.cs" />
     <Compile Include="ITextBoxStorage.cs" />
+    <Compile Include="MyArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextBoxStorage.cs" />
