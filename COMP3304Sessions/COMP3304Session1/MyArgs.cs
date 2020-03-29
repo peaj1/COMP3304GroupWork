@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP3304Session1
 {
-    class MyArgs : EventArgs
+    public class MyArgs : EventArgs
     {
 
         public String Data { get; }
