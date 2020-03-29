@@ -20,6 +20,8 @@ namespace COMP3304Session1
         int _ID;
         RemoveNoteDelegate _removeThis;
 
+        NoteData _noteData;
+
         public FishyNote(RemoveNoteDelegate pRemoveNote, int pID, ITextBoxStorage ptextStorage)
         {
             InitializeComponent();

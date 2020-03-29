@@ -1,27 +1,32 @@
 ﻿using System;
 
-public class NoteData
+namespace COMP3304Session1
 {
-	public NoteData()
-	{
-	}
-
-    public event EventHandler<myArgs> NewData;
-
-    private void OnDataChanged(String data)
+    public class NoteData
     {
-        MyArgs args = new MyArgs(data);
-        NewData(this, args);
-    }
+        public NoteData()
+        {
+        }
 
-    public void Subscribe(EventHandler<MyArgs> listener)
-    {
-        NewData += listener;
-    }
+        public event EventHandler<myArgs> NewData;
 
-    private void ChangeText(String newText)
-    {
-        OnNewData(newText); //test
+        private void OnDataChanged(String data)
+        {
+            MyArgs args = new MyArgs(data);
+            NewData(this, args);
+        }
+
+        public void Subscribe(EventHandler<MyArgs> listener)
+        {
+            //confused why we need to add equals listeners rather than just equals
+            NewData += listener;
+        }
+
+        private void ChangeText(String newText)
+        {
+            OnNewData(newText); //test
+        }
+
     }
 
 }
