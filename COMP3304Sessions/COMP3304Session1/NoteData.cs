@@ -21,7 +21,7 @@ public class NoteData
 
     private void ChangeText(String newText)
     {
-        OnNewData(newText);
+        OnNewData(newText); //test
     }
 
 }
